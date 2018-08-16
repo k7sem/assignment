@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>upload images</title>
+
+    <meta name="keywords" content="keyword1,keyword2,keyword3"></meta>
+    <meta name="description" content="this is my page"></meta>
+    <meta name="content-type" content="text/html; charset=UTF-8"></meta>
+
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+</head>
+
+<body>
+
+<form enctype="multipart/form-data" method="post" action="/douploading">
+    Image<input type="file" name="file"/>
+    <p>Please select user id:
+    <select onchange="getChilds(this.value)" class="uid1" id="uidd" name="uid">
+        <option value=""> please select </option>
+        <option  th:selected="${u.id}" th:each="u:${users}"  th:value="${u.id}" th:text="${u.username}" value="1">user name</option>
+    </select></p>
+    <p><input type="submit" value="upload"/></p>
+</form>
+</body>
+</html>
