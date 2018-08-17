@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Online testing system</title>
+
+    <meta name="keywords" content="keyword1,keyword2,keyword3"></meta>
+    <meta name="description" content="information"></meta>
+    <meta name="content-type" content="text/html; charset=UTF-8"></meta>
+
+
+</head>
+<body>
+
+
+<label for="body">Please input Java source code</label>
+<form method="post" action="/subcode">
+<textarea id="body" name="code" th:inline="text" rows="50" cols="50">
+
+    public static void main(String[] args) {
+    }
+</textarea>
+
+<p><input type="submit" value="submit"/></p>
+</form>
+
+<H3 th:text="${msg}"></H3>
+
+</body>
+</html>
